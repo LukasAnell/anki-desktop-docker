@@ -13,5 +13,5 @@ services:
     volumes:
       - ./anki_data:/config
     ports:
-      - 3000:3000  # Web UI
+      - 3100:3100  # Web UI
       - 8765:8765  # AnkiConnect
