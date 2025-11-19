@@ -2,9 +2,6 @@ services:
   anki-desktop:
     image: mlcivilengineer/anki-desktop-docker:main
     container_name: anki
-    build:
-      context: ./
-      dockerfile: Dockerfile
     environment:
       - PUID=1000
       - PGID=1000
