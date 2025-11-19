@@ -2,6 +2,7 @@ services:
   anki-desktop:
     image: mlcivilengineer/anki-desktop-docker:main
     build:
+      container_name: anki
       context: ./
       dockerfile: Dockerfile
     environment:
