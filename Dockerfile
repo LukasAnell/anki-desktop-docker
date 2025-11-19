@@ -1,6 +1,6 @@
 FROM lsiobase/kasmvnc:ubuntunoble
 
-ARG ANKI_VERSION=25.09.2
+ARG ANKI_VERSION=25.09
 
 # Install dependencies (fix openbox autostart error by installing python3-pyxdg)
 RUN apt-get update && \
