@@ -29,4 +29,4 @@ RUN mkdir -p /config/.local/share
 
 COPY ./root /
 
-EXPOSE 3000 8765
+EXPOSE 3100 8765
