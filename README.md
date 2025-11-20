@@ -4,7 +4,7 @@ This project is inspired by [pnorcross/anki-desktop-docker](https://github.com/p
 
 Why? Because it makes automating Anki (with addons like AnkiConnect) easier.
 
-The Anki desktop app runs in a browser (via VNC) on port `3000`. Your Anki data is stored in `anki_data` mounted as a volume at '/config` inside the container.
+The Anki desktop app runs in a browser (via VNC) on port `3100`. Your Anki data is stored in `anki_data` mounted as a volume at '/config` inside the container.
 
 ---
 
@@ -46,7 +46,7 @@ docker run -d \
     -e PUID=1000 \
     -e PGID=1000 \
     -v "$(pwd)/anki_data:/config" \
-    -p 3000:3000 \
+    -p 3100:3000 \
     -p 8765:8765 \
     mlcivilengineer/anki-desktop-docker:main
 ```
@@ -67,16 +67,13 @@ If you prefer docker compose instead, use the `docker-compose.yml` in the root o
 services:
   anki-desktop:
     image: mlcivilengineer/anki-desktop-docker:main
-    build:
-      context: ./
-      dockerfile: Dockerfile
     environment:
       - PUID=1000
       - PGID=1000
     volumes:
       - ./anki_data:/config
     ports:
-      - 3000:3000  # Web UI
+      - 3100:3000  # Web UI
       - 8765:8765  # AnkiConnect
 
 ````
